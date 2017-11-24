@@ -13,6 +13,5 @@ public class Student {
         Student student = new Student();
         student.setName("1");
         student.setNo("2");
-        // d
     }
 }
