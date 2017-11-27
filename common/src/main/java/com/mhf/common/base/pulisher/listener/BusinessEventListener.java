@@ -1,13 +1,11 @@
 package com.mhf.common.base.pulisher.listener;
 
-import com.mhf.common.base.constant.CommonConstant;
 import com.mhf.common.base.pulisher.constant.BusinessEventListenerConstant;
 import com.mhf.common.base.pulisher.event.BusinessEvent;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.task.TaskExecutor;
-
-import java.text.MessageFormat;
 
 public abstract class BusinessEventListener {
 
