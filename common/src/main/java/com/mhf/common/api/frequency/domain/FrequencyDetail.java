@@ -3,6 +3,9 @@ package com.mhf.common.api.frequency.domain;
 
 
 /*****************************************************************************/
+
+import com.mhf.common.api.redis.constant.RedisConstant;
+
 /**
  * Project Name:oldataservice<br/>
  * Package Name:com.sbm.module.common.api.frequency.domian<br/>

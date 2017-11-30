@@ -2,6 +2,7 @@ package com.mhf.common.business.biz.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.mhf.common.api.apiinteractive.domain.TCApiInteractiveDetail;
+import com.mhf.common.api.redis.biz.IRedisService;
 import com.mhf.common.base.biz.impl.CommonServiceImpl;
 import com.mhf.common.base.constant.BusinessCode;
 import com.mhf.common.base.constant.CommonConstant;
@@ -9,6 +10,7 @@ import com.mhf.common.base.exception.BusinessException;
 import com.mhf.common.base.pulisher.template.BusinessEventTemplate;
 import com.mhf.common.business.biz.IBusinessService;
 import com.mhf.common.business.biz.IThreadSleepExecuteCallBack;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 /*****************************************************************************/
@@ -28,12 +30,12 @@ public class BusinessServiceImpl extends CommonServiceImpl implements IBusinessS
 //	 */
 //	@Autowired
 //	protected ITCSerialCodeService serialCodeService;
-//
-//	/**
-//	 * 缓存
-//	 */
-//	@Autowired
-//	protected IRedisService redisService;
+
+	/**
+	 * 缓存
+	 */
+	@Autowired
+	protected IRedisService redisService;
 
 	/**
 	 * 
