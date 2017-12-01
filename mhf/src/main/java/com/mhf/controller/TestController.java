@@ -16,4 +16,9 @@ public class TestController extends BaseController{
         return jsonContainer;
     }
 
+    @RequestMapping("/hello1/{name}")
+    public String hello1(@PathVariable String name){
+        return name;
+    }
+
 }

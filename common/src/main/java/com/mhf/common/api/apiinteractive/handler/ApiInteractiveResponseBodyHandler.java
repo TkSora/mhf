@@ -5,13 +5,13 @@ import com.mhf.common.api.apiinteractive.domain.TCApiInteractiveDetail;
 import com.mhf.common.base.entity.JsonContainer;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
-import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 /*****************************************************************************/
+
 /**
  * Project Name:onlineleasing<br/>
  * Package Name:com.sbm.module.commonapi.apiinteractive.advice<br/>
@@ -22,24 +22,28 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
  * @author ：junkai.zhang
  */
 @ControllerAdvice
-public class ApiInteractiveResponseBodyHandler implements ResponseBodyAdvice<JsonContainer> {
+public class ApiInteractiveResponseBodyHandler implements ResponseBodyAdvice {
 
-	public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> converterType) {
+
+	@Override
+	public boolean supports(MethodParameter returnType, Class converterType) {
 		return true;
-
 	}
 
-	public JsonContainer beforeBodyWrite(JsonContainer body, MethodParameter returnType, MediaType selectedContentType,
-			Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request,
-			ServerHttpResponse response) {
+	@Override
+	public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
 
-		TCApiInteractiveDetail detail = TCApiInteractiveDetail.get();
-		if (null != body) {
-			detail.setCode(body.getCode());
-			detail.setResponseBody(JSON.toJSONString(body));
+		if (body instanceof JsonContainer) {
+			TCApiInteractiveDetail detail = TCApiInteractiveDetail.get();
+			JsonContainer jsonContainer = (JsonContainer) body;
+			if (null != jsonContainer) {
+				detail.setCode(jsonContainer.getCode());
+				detail.setResponseBody(JSON.toJSONString(body));
+			}
+			//System.out.println("i am in JsonContainer");
+ 		} else {
+			//System.out.println("i am in else");
 		}
-
 		return body;
 	}
-
 }
