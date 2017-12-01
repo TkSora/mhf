@@ -53,7 +53,10 @@ public class BaseController {
 		jsonContainer.setCode(((BusinessException) e).getCode());
 		jsonContainer.setMessage(((BusinessException) e).getMessage());
 		jsonContainer.setData(data);
+
+		e.printStackTrace();
 		//CommonConstant.ERRORDATA.error(data, e);
+
 		// 线程保存错误
 		TCApiInteractiveDetail detail = TCApiInteractiveDetail.get();
 		detail.setErrorMessage(ExceptionUtils.getStackTrace(e));

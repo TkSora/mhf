@@ -2,16 +2,6 @@ package com.mhf.common.api.redis.biz;
 
 import java.util.concurrent.TimeUnit;
 
-/*****************************************************************************/
-/**
- * Project Name:onlineleasing<br/>
- * Package Name:com.sbm.module.onlineleasing.shop.biz<br/>
- * File Name:ITOLShopService.java<br/>
- * 
- * 作成日 ：2017-5-18 下午4:34:06 <br/>
- * 
- * @author ：junkai.zhang
- */
 public interface IRedisService {
 
 	/**
@@ -22,7 +12,7 @@ public interface IRedisService {
 	 * @param key
 	 * @param obj
 	 */
-	public void set(String key, Object obj);
+	void set(String key, Object obj);
 
 	/**
 	 * 
@@ -32,7 +22,7 @@ public interface IRedisService {
 	 * @param key
 	 * @return
 	 */
-	public Object get(String key);
+	Object get(String key);
 
 	/**
 	 * 
@@ -43,7 +33,7 @@ public interface IRedisService {
 	 * @param obj
 	 * @return
 	 */
-	public Object getAndSet(String key, Object obj);
+	Object getAndSet(String key, Object obj);
 
 	/**
 	 * 
@@ -55,7 +45,7 @@ public interface IRedisService {
 	 * @param unit
 	 * @return
 	 */
-	public Boolean expire(String key, long timeout, TimeUnit unit);
+	Boolean expire(String key, long timeout, TimeUnit unit);
 
 	/**
 	 * 
@@ -65,7 +55,7 @@ public interface IRedisService {
 	 * @param key
 	 * @return
 	 */
-	public Boolean defaultExpire(String key);
+	Boolean defaultExpire(String key);
 
 	/**
 	 * 
@@ -75,7 +65,7 @@ public interface IRedisService {
 	 * @param key
 	 * @return
 	 */
-	public Long getExpire(String key);
+	Long getExpire(String key);
 
 	/**
 	 * 
@@ -86,7 +76,7 @@ public interface IRedisService {
 	 * @param unit
 	 * @return
 	 */
-	public Long getExpire(String key, TimeUnit unit);
+	Long getExpire(String key, TimeUnit unit);
 
 	/**
 	 * 
@@ -96,7 +86,7 @@ public interface IRedisService {
 	 * @param key
 	 * @return
 	 */
-	public boolean hasExpire(String key);
+	boolean hasExpire(String key);
 
 	/**
 	 * 
@@ -105,6 +95,6 @@ public interface IRedisService {
 	 * @author junkai.zhang
 	 * @param key
 	 */
-	public void delete(String... key);
+	void delete(String... key);
 
 }

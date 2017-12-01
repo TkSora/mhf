@@ -1,3 +1,7 @@
 # tomcat properties
 server:
   context-path: /mhf
+spring:
+  redis:
+    host: 10.130.12.15
+    password: Sbm123
