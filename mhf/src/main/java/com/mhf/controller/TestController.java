@@ -1,17 +1,19 @@
 package com.mhf.controller;
 
-import org.apache.commons.lang3.StringUtils;
+import com.mhf.common.base.controller.BaseController;
+import com.mhf.common.base.entity.JsonContainer;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class TestController {
+public class TestController extends BaseController{
 
     @RequestMapping("/hello/{name}")
-    public String hello(@PathVariable String name){
-        StringUtils.isBlank(name);
-        return name;
+    public JsonContainer hello(@PathVariable String name){
+        JsonContainer jsonContainer = getJsonContainer();
+        setSuccessMessage(jsonContainer, name);
+        return jsonContainer;
     }
 
 }

@@ -30,6 +30,7 @@ public class ApiInteractiveInterceptor implements HandlerInterceptor {
 //	private ITCApiInteractiveDetailService service;
 
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+
 		TCApiInteractiveDetail detail = new TCApiInteractiveDetail();
 
 		// userCode

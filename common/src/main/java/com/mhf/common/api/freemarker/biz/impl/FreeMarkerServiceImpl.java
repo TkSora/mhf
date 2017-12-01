@@ -4,7 +4,6 @@ import com.mhf.common.api.freemarker.biz.IFreeMarkerService;
 import com.mhf.common.api.freemarker.util.FreeMarkerUtil;
 import com.mhf.common.business.biz.impl.BusinessServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
@@ -27,7 +26,7 @@ import java.util.Map;
 /**
  * @preserve public
  */
-@Component
+//@Component
 //@Transactional(value = TransactionConstant.OL, propagation = Propagation.REQUIRED)
 public class FreeMarkerServiceImpl extends BusinessServiceImpl implements IFreeMarkerService {
 

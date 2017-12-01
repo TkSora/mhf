@@ -1,7 +1,6 @@
 package com.mhf.common.api.freemarker.configuration;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean;
 
 
@@ -15,7 +14,7 @@ import org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean;
  * 
  * @author ：junkai.zhang
  */
-@Configuration
+//@Configuration
 public class FreeMarkerConfiguration {
 
 	@Bean(name = "freemarkerConfiguration")

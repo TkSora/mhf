@@ -6,7 +6,6 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 
 import java.io.File;
@@ -22,7 +21,7 @@ import java.util.Map;
  * 
  * @author ：junkai.zhang
  */
-@Component
+//@Component
 public class FreeMarkerUtil {
 
 	@Autowired

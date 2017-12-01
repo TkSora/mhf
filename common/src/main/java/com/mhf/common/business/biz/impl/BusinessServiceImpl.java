@@ -10,7 +10,6 @@ import com.mhf.common.base.exception.BusinessException;
 import com.mhf.common.base.pulisher.template.BusinessEventTemplate;
 import com.mhf.common.business.biz.IBusinessService;
 import com.mhf.common.business.biz.IThreadSleepExecuteCallBack;
-import org.springframework.beans.factory.annotation.Autowired;
 
 
 /*****************************************************************************/
@@ -34,7 +33,7 @@ public class BusinessServiceImpl extends CommonServiceImpl implements IBusinessS
 	/**
 	 * 缓存
 	 */
-	@Autowired
+	//@Autowired
 	protected IRedisService redisService;
 
 	/**
