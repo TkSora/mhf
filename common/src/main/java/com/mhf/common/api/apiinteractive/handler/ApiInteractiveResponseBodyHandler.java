@@ -10,17 +10,6 @@ import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
-/*****************************************************************************/
-
-/**
- * Project Name:onlineleasing<br/>
- * Package Name:com.sbm.module.commonapi.apiinteractive.advice<br/>
- * File Name:ResponseBodyAdvice.java<br/>
- * 
- * 作成日 ：2017-8-10 上午9:45:10 <br/>
- * 
- * @author ：junkai.zhang
- */
 @ControllerAdvice
 public class ApiInteractiveResponseBodyHandler implements ResponseBodyAdvice {
 
@@ -33,6 +22,7 @@ public class ApiInteractiveResponseBodyHandler implements ResponseBodyAdvice {
 	@Override
 	public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
 
+		// 返回jsonContainer
 		if (body instanceof JsonContainer) {
 			TCApiInteractiveDetail detail = TCApiInteractiveDetail.get();
 			JsonContainer jsonContainer = (JsonContainer) body;
@@ -41,7 +31,9 @@ public class ApiInteractiveResponseBodyHandler implements ResponseBodyAdvice {
 				detail.setResponseBody(JSON.toJSONString(body));
 			}
 			//System.out.println("i am in JsonContainer");
- 		} else {
+ 		}
+ 		// 返回其他
+ 		else {
 			//System.out.println("i am in else");
 		}
 		return body;

@@ -1,5 +1,7 @@
 package com.mhf.controller;
 
+import com.mhf.common.api.frequency.annotation.Frequency;
+import com.mhf.common.api.jsonwebtoken.annotation.Authorization;
 import com.mhf.common.api.redis.biz.IRedisService;
 import com.mhf.common.base.controller.BaseController;
 import com.mhf.common.base.entity.JsonContainer;
@@ -14,6 +16,8 @@ public class TestController extends BaseController{
     @Autowired
     private IRedisService service;
 
+    @Frequency
+    @Authorization
     @RequestMapping("/hello/{name}")
     public JsonContainer hello(@PathVariable String name){
         JsonContainer jsonContainer = getJsonContainer();

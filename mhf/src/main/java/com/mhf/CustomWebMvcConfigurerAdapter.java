@@ -15,7 +15,10 @@ public class CustomWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter{
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+        // 注意顺序
         registry.addInterceptor((HandlerInterceptor) util.getBean("apiInteractiveInterceptor")).addPathPatterns("/**");
+        registry.addInterceptor((HandlerInterceptor) util.getBean("frequencyInterceptor")).addPathPatterns("/**");
+        registry.addInterceptor((HandlerInterceptor) util.getBean("JSONWebTokenInterceptor")).addPathPatterns("/**");
     }
 
 }

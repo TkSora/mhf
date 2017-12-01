@@ -3,16 +3,6 @@ package com.mhf.common.api.jsonwebtoken.domain;
 import java.util.HashMap;
 import java.util.Map;
 
-/*****************************************************************************/
-/**
- * Project Name:oldataservice<br/>
- * Package Name:com.sbm.module.common.api.jsonwebtoken.domain<br/>
- * File Name:JSONWebToken.java<br/>
- * 
- * 作成日 ：2017-10-10 上午11:54:44 <br/>
- * 
- * @author ：junkai.zhang
- */
 public class JSONWebToken {
 
 	private String login;

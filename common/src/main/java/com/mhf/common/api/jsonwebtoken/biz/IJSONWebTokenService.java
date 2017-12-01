@@ -1,19 +1,7 @@
 package com.mhf.common.api.jsonwebtoken.biz;
 
-
-/*****************************************************************************/
-
 import com.mhf.common.api.jsonwebtoken.domain.JSONWebToken;
 
-/**
- * Project Name:onlineleasing<br/>
- * Package Name:com.sbm.module.onlineleasing.shop.biz<br/>
- * File Name:ITOLShopService.java<br/>
- * 
- * 作成日 ：2017-5-18 下午4:34:06 <br/>
- * 
- * @author ：junkai.zhang
- */
 public interface IJSONWebTokenService {
 
 	/**
@@ -24,7 +12,7 @@ public interface IJSONWebTokenService {
 	 * @param jsonWebToken
 	 * @return
 	 */
-	public String getJWTString(JSONWebToken jsonWebToken);
+	String getJWTString(JSONWebToken jsonWebToken);
 
 	/**
 	 * 
@@ -33,6 +21,6 @@ public interface IJSONWebTokenService {
 	 * @author junkai.zhang
 	 * @param jsonWebToken
 	 */
-	public void isValid(JSONWebToken jsonWebToken);
+	void isValid(JSONWebToken jsonWebToken);
 
 }

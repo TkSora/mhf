@@ -1,23 +1,10 @@
 package com.mhf.common.api.apiinteractive.domain;
 
-
-
-/*****************************************************************************/
-
 import com.mhf.common.business.domain.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Transient;
 
-/**
- * Project Name:onlineleasing<br/>
- * Package Name:com.sbm.module.commonapi.apiinteractive.domain<br/>
- * File Name:RequestModel.java<br/>
- * 
- * 作成日 ：2017-8-10 上午9:37:35 <br/>
- * 
- * @author ：junkai.zhang
- */
 //@Entity(name = "TCApiInteractiveDetail")
 //@Table(name = "T_C_API_INTERACTIVE_DETAIL")
 public class TCApiInteractiveDetail extends BaseEntity {
