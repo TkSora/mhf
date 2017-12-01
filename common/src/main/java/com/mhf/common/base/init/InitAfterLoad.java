@@ -12,6 +12,6 @@ package com.mhf.common.base.init;
  */
 public interface InitAfterLoad {
 
-	public void init();
+	void init();
 
 }

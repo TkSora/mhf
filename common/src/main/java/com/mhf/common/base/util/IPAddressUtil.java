@@ -3,16 +3,6 @@ package com.mhf.common.base.util;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-/*****************************************************************************/
-/**
- * Project Name:onlineleasing<br/>
- * Package Name:com.sbm.module.common.util<br/>
- * File Name:IPAddressUtil.java<br/>
- * 
- * 作成日 ：2017-8-9 下午4:33:32 <br/>
- * 
- * @author ：junkai.zhang
- */
 public class IPAddressUtil {
 
 	private static final String UNKNOW = "unknown";

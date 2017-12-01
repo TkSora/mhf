@@ -12,6 +12,6 @@ package com.mhf.common.business.biz;
  */
 public interface IThreadSleepExecuteCallBack<T> {
 
-	public T execute();
+	T execute();
 
 }

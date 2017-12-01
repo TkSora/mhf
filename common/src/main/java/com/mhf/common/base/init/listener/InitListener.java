@@ -10,18 +10,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-
-
-/*****************************************************************************/
-/**
- * Project Name:onlineleasing<br/>
- * Package Name:com.sbm.module.common.listener<br/>
- * File Name:InitListener.java<br/>
- * 
- * 作成日 ：2017-8-17 下午5:33:02 <br/>
- * 
- * @author ：junkai.zhang
- */
 @Component
 public class InitListener {
 

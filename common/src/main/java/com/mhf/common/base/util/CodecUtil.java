@@ -2,16 +2,6 @@ package com.mhf.common.base.util;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
-/*****************************************************************************/
-/**
- * Project Name:onlineleasing<br/>
- * Package Name:com.sbm.module.common.util<br/>
- * File Name:SHA1Util.java<br/>
- * 
- * 作成日 ：2017-7-26 上午10:52:57 <br/>
- * 
- * @author ：junkai.zhang
- */
 public class CodecUtil {
 
 	/**

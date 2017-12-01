@@ -8,16 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/*****************************************************************************/
-/**
- * Project Name:onlineleasing<br/>
- * Package Name:com.sbm.module.common.interceptor<br/>
- * File Name:JSONWebTokenInterceptor.java<br/>
- * 
- * 作成日 ：2017-8-2 上午10:59:52 <br/>
- * 
- * @author ：junkai.zhang
- */
 @Component("CORSInterceptor")
 public class CORSInterceptor implements HandlerInterceptor {
 

@@ -1,6 +1,5 @@
 package com.mhf.common.base.handler;
 
-
 import com.mhf.common.base.constant.BusinessCode;
 import com.mhf.common.base.controller.BaseController;
 import com.mhf.common.base.entity.JsonContainer;
@@ -9,17 +8,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
-/*****************************************************************************/
-/**
- * Project Name:onlineleasing<br/>
- * Package Name:com.sbm.module.exception.controller<br/>
- * File Name:GlobalExceptionHandler.java<br/>
- * 
- * 作成日 ：2017-7-28 下午1:51:42 <br/>
- * 
- * @author ：junkai.zhang
- */
 @ControllerAdvice
 public class GlobalExceptionHandler extends BaseController {
 
