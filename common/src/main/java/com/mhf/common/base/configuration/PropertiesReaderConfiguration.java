@@ -1,9 +1,5 @@
 package com.mhf.common.base.configuration;
 
-import org.springframework.context.annotation.Configuration;
-
-
-
 /*****************************************************************************/
 /**
  * Project Name:posUploadDataService<br/>
@@ -14,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * 
  * @author ：junkai.zhang
  */
-@Configuration
+//@Configuration
 public class PropertiesReaderConfiguration {
 
 	// TODO 暂且注释
