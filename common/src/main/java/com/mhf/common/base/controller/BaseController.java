@@ -6,15 +6,6 @@ import com.mhf.common.base.entity.JsonContainer;
 import com.mhf.common.base.exception.BusinessException;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
-
-
-/*****************************************************************************/
-/* 　　　　　　(C) Super Brand Mail Inc. 2014     　　　                     */
-/*****************************************************************************/
-
-// ***************************************************************************/
-// * modified by 更新者 更新日 修改内容
-// ***************************************************************************/
 public class BaseController {
 
 	/************** 创建json容器 ***************/

@@ -11,17 +11,6 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestBodyAdvice;
 import java.io.IOException;
 import java.lang.reflect.Type;
 
-
-/*****************************************************************************/
-/**
- * Project Name:onlineleasing<br/>
- * Package Name:com.sbm.module.commonapi.apiinteractive.handler<br/>
- * File Name:ApiInteractiveRequestHandler.java<br/>
- * 
- * 作成日 ：2017-8-10 上午10:49:18 <br/>
- * 
- * @author ：junkai.zhang
- */
 @ControllerAdvice
 public class ApiInteractiveRequestBodyHandler implements RequestBodyAdvice {
 
@@ -44,6 +33,7 @@ public class ApiInteractiveRequestBodyHandler implements RequestBodyAdvice {
 			Class<? extends HttpMessageConverter<?>> converterType) {
 
 		Object obj = body;
+		// 实现处理接口的对象，执行相关操作
 		if (body instanceof IApiInteractiveProcess) {
 			obj = ((IApiInteractiveProcess) body).clone(body);
 		}

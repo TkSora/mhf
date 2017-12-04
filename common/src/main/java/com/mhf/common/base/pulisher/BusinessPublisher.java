@@ -5,17 +5,6 @@ import com.mhf.common.base.util.SpringBeanUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-
-/*****************************************************************************/
-/**
- * Project Name:onlineleasing<br/>
- * Package Name:com.sbm.module.common.publisher.application<br/>
- * File Name:ApplicationPublisher.java<br/>
- * 
- * 作成日 ：2017-8-28 下午4:22:53 <br/>
- * 
- * @author ：junkai.zhang
- */
 @Component
 public class BusinessPublisher {
 

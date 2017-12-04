@@ -2,16 +2,6 @@ package com.mhf.common.base.constant;
 
 import java.text.MessageFormat;
 
-/*****************************************************************************/
-/**
- * Project Name:onlineleasing<br/>
- * Package Name:com.sbm.module.common.constant<br/>
- * File Name:BusinessCode.java<br/>
- * 
- * 作成日 :2017-7-28 下午3:31:01 <br/>
- * 
- * @author :junkai.zhang
- */
 public enum BusinessCode {
 
 	/*****************************************************************/

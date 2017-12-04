@@ -1,19 +1,7 @@
 package com.mhf.common.base.exception;
 
-
-/*****************************************************************************/
-
 import com.mhf.common.base.constant.BusinessCode;
 
-/**
- * Project Name:onlineleasing<br/>
- * Package Name:com.sbm.module.common.exception<br/>
- * File Name:BusinessException.java<br/>
- * 
- * 作成日 ：2017-7-28 下午2:17:58 <br/>
- * 
- * @author ：junkai.zhang
- */
 public class BusinessException extends RuntimeException {
 
 	/**

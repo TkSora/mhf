@@ -1,20 +1,7 @@
 package com.mhf.common.api.frequency.domain;
 
-
-
-/*****************************************************************************/
-
 import com.mhf.common.api.redis.constant.RedisConstant;
 
-/**
- * Project Name:oldataservice<br/>
- * Package Name:com.sbm.module.common.api.frequency.domian<br/>
- * File Name:Frequency.java<br/>
- * 
- * 作成日 ：2017-10-16 上午11:42:33 <br/>
- * 
- * @author ：junkai.zhang
- */
 public class FrequencyDetail {
 
 	private String ip;

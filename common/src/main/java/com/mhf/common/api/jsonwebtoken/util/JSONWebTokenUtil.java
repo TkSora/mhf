@@ -13,17 +13,6 @@ import javax.crypto.spec.SecretKeySpec;
 import java.security.Key;
 import java.util.Date;
 
-
-/*****************************************************************************/
-/**
- * Project Name:onlineleasing<br/>
- * Package Name:com.sbm.module.commonapi.jsonwebtoken.util<br/>
- * File Name:JSONUWebTokenUtil.java<br/>
- * 
- * 作成日 ：2017-8-2 上午11:56:51 <br/>
- * 
- * @author ：junkai.zhang
- */
 @Component
 public class JSONWebTokenUtil {
 
@@ -38,7 +27,7 @@ public class JSONWebTokenUtil {
 	// 加密方式
 	public static SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
 	// Time To Live
-	// 60分钟
+	// 12小时
 	public static long TTL = 12 * 60 * 60 * 1000L;
 
 	public static Key signingKey = new SecretKeySpec(Base64.decodeBase64(HS256KEY), signatureAlgorithm.getJcaName());

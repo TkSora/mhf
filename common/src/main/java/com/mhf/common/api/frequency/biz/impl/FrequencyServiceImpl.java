@@ -9,28 +9,8 @@ import com.mhf.common.business.biz.impl.BusinessServiceImpl;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
-import javax.transaction.Transactional;
 import java.util.concurrent.TimeUnit;
 
-
-/*****************************************************************************/
-/* 　　　　　　(C) Super Brand Mail Inc. 2014     　　　                     */
-/*****************************************************************************/
-/**
- * Project Name:posUploadData<br/>
- * Package Name:com.sbm.module.postsales.biz.impl<br/>
- * File Name:EdiInteractiveDetailServiceImpl.java<br/>
- * 
- * 作成日 ：2016-1-4 下午5:05:55 <br/>
- * 
- * @author ：junkai.zhang 
- */
-// ***************************************************************************/
-// * modified by 更新者 更新日 修改内容
-// ***************************************************************************/
-/**
- * @preserve public
- */
 @Component
 //@Transactional(value = TransactionConstant.OL, propagation = Propagation.REQUIRED)
 public class FrequencyServiceImpl extends BusinessServiceImpl implements IFrequencyService {

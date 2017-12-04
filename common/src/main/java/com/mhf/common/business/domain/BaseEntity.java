@@ -3,16 +3,6 @@ package com.mhf.common.business.domain;
 import javax.persistence.*;
 import java.util.Date;
 
-/*****************************************************************************/
-/**
- * Project Name:downloadFromGAG<br/>
- * Package Name:com.sbm.module.common.domain<br/>
- * File Name:BaseEntity.java<br/>
- * 
- * 作成日 ：2016-11-11 下午3:50:12 <br/>
- * 
- * @author ：junkai.zhang
- */
 @MappedSuperclass
 public class BaseEntity {
 
@@ -27,7 +17,7 @@ public class BaseEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@Column(columnDefinition = "timestamp")
+	@Column(columnDefinition = "timestamp", updatable = false)
 	private Date created;
 
 	@Column(columnDefinition = "timestamp")
