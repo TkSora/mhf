@@ -9,40 +9,22 @@ import com.mhf.common.api.mail.domain.MailData;
 import com.mhf.common.api.mail.domain.TCMailSendDetail;
 import com.mhf.common.api.mail.domain.TCMailTemplate;
 import com.mhf.common.business.biz.impl.BusinessServiceImpl;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Component;
 
 import javax.mail.internet.MimeMessage;
 import java.util.Date;
 
-
-/*****************************************************************************/
-/* 　　　　　　(C) Super Brand Mail Inc. 2014     　　　                     */
-/*****************************************************************************/
-/**
- * Project Name:posUploadData<br/>
- * Package Name:com.sbm.module.postsales.biz.impl<br/>
- * File Name:EdiInteractiveDetailServiceImpl.java<br/>
- * 
- * 作成日 ：2016-1-4 下午5:05:55 <br/>
- * 
- * @author ：junkai.zhang 
- */
-// ***************************************************************************/
-// * modified by 更新者 更新日 修改内容
-// ***************************************************************************/
-/**
- * @preserve public
- */
-//@Component
+@Component
 //@Transactional(value = TransactionConstant.OL, propagation = Propagation.REQUIRED)
 public class MailServiceImpl extends BusinessServiceImpl implements IMailService {
 
 //	@Autowired
 	private FreeMarkerUtil fk;
-//	@Autowired
+	@Autowired
 	private JavaMailSender javaMailSender;
 //	@Autowired
 //	@Qualifier("taskExecutor4mail")
@@ -54,10 +36,10 @@ public class MailServiceImpl extends BusinessServiceImpl implements IMailService
 //	@Autowired
 //	private ITCMailSendDetailService mailSendDetailService;
 
-	@Value("#{propertiesReader['mail.sentFrom']}")
-	private String sentFrom;
-	@Value("#{propertiesReader['mail.defaultEncoding']}")
-	private String defaultEncoding;
+//	@Value("#{propertiesReader['mail.sentFrom']}")
+	private String sentFrom = "295322187@qq.com";
+//	@Value("#{propertiesReader['mail.defaultEncoding']}")
+	private String defaultEncoding = "UTF-8";
 
 	public void sendMail(MailData mailData) {
 		// 根据code查询模板
@@ -65,7 +47,9 @@ public class MailServiceImpl extends BusinessServiceImpl implements IMailService
 		for (TCMailSendDetail detail : mailData.getDetails()) {
 			// 如果sentFrom为空，则赋予默认值
 			detail.setSentFrom(sentFrom);
-			sendMailByAsyncMode(mailData.getMailTemplate(), detail);
+			// 暂用同步
+			// sendMailByAsyncMode(mailData.getMailTemplate(), detail);
+			sendMailBySyncMode(mailData.getMailTemplate(), detail);
 		}
 	}
 
@@ -101,6 +85,7 @@ public class MailServiceImpl extends BusinessServiceImpl implements IMailService
 			// 设置明细
 			setDetail(mailTemplate, detail);
 			// 显示名
+			// from需要和username一致，不然会报501
 			messageHelper.setFrom(detail.getSentFrom());
 			// 收件邮箱
 			messageHelper.setTo(detail.getSentTo());
@@ -118,6 +103,7 @@ public class MailServiceImpl extends BusinessServiceImpl implements IMailService
 			// 保存错误信息
 			detail.setErrorMessage(getStackTrace(e));
 			// 打印错误日志
+			e.printStackTrace();
 			//CommonConstant.ERRORDATA.error(detail, e);
 		}
 		//mailSendDetailService.saveMailSendDetail(detail);
@@ -131,8 +117,10 @@ public class MailServiceImpl extends BusinessServiceImpl implements IMailService
 		// 发送时间
 		detail.setSentDate(new Date());
 		// 邮件html
-		detail.setHtml(freeMarkerService.getFreeMarkerTemplate(mailTemplate.getFilePrefix(),
-				mailTemplate.getFileName(), detail.getParamsMap()));
+		// TODO 添加模板
+//		detail.setHtml("test");
+//		detail.setHtml(freeMarkerService.getFreeMarkerTemplate(mailTemplate.getFilePrefix(),
+//				mailTemplate.getFileName(), detail.getParamsMap()));
 		// 默认发送状态 1：成功 0：失败
 		detail.setType(MailConstant.SUCCESS);
 	}

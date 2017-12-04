@@ -5,3 +5,18 @@ spring:
   redis:
     host: 10.130.12.15
     password: Sbm123
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: 295322187@qq.com
+    password: fafbfuedshofbjbb
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+
+

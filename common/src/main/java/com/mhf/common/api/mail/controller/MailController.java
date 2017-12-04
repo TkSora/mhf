@@ -11,14 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
-/*****************************************************************************/
-/* 　　　　　　(C) Super Brand Mail Inc. 2014     　　　                     */
-/*****************************************************************************/
-
-// ***************************************************************************/
-// * modified by 更新者 更新日 修改内容
-// ***************************************************************************/
 @Frequency
 @Authorization
 @Controller

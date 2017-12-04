@@ -7,17 +7,6 @@ import javax.persistence.Transient;
 import java.util.Date;
 import java.util.Map;
 
-
-/*****************************************************************************/
-/**
- * Project Name:CRMDataProcess<br/>
- * Package Name:com.sbm.module.gag.domain<br/>
- * File Name:GAGReceipt.java<br/>
- * 
- * 作成日 ：2017-4-13 下午5:58:11 <br/>
- * 
- * @author ：junkai.zhang
- */
 //@Entity(name = "TCMailSendDetail")
 //@Table(name = "T_C_MAIL_SEND_DETAIL")
 public class TCMailSendDetail extends BaseEntity {
