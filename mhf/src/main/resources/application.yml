@@ -3,5 +3,5 @@ server:
   context-path: /mhf
 spring:
   redis:
-    host: 10.130.12.15
-    password: Sbm123
+    host: 101.132.108.40
+    password: Teamw0rk
