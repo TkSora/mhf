@@ -1,7 +1,19 @@
 # tomcat properties
 server:
   context-path: /mhf
+
 spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url : jdbc:postgresql://rm-uf6uw95wu69ab0n105o.pg.rds.aliyuncs.com:3432/mhf
+    username: dbuser
+    password: Teamw0rk
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  data:
+    rest:
+      base-path: /rest
   redis:
     host: 101.132.108.40
     password: Teamw0rk
