@@ -9,10 +9,11 @@ import com.mhf.common.api.mail.domain.TCMailTemplate;
 import com.mhf.common.api.redis.biz.IRedisService;
 import com.mhf.common.base.controller.BaseController;
 import com.mhf.common.base.entity.JsonContainer;
+import com.mhf.domain.Person;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ public class TestController extends BaseController{
 
     @Frequency
     @Authorization
-    @RequestMapping("/hello/{name}")
+    @RequestMapping(value = "/hello/{name}", method = RequestMethod.GET)
     public JsonContainer hello(@PathVariable String name){
         JsonContainer jsonContainer = getJsonContainer();
         String key = "key";
@@ -39,13 +40,18 @@ public class TestController extends BaseController{
         return jsonContainer;
     }
 
-    @RequestMapping("/hello1/{name}")
+    @ApiOperation(value="hello1", notes="根据name回显")
+    @ApiImplicitParam(name = "name", value = "具体名称", required = true, dataType = "String")
+    @RequestMapping(value = "/hello1/{name}", method = RequestMethod.GET)
     public String hello1(@PathVariable String name){
         return name;
     }
 
-    @RequestMapping("/mail/{text}")
-    public JsonContainer mail(@PathVariable String text){
+
+    @RequestMapping(value = "/mail", method = RequestMethod.POST)
+    @ApiOperation(nickname = "swagger-mail", value="邮件测试", notes="根据text发送邮件")
+    @ApiImplicitParam(name = "person", value = "用户详细实体person", required = true, dataType = "Person")
+    public JsonContainer mail(@RequestBody Person person){
         JsonContainer jsonContainer = getJsonContainer();
 
         MailData mailData = new MailData();
@@ -55,8 +61,8 @@ public class TestController extends BaseController{
 
         List<TCMailSendDetail> details = new ArrayList<>();
         TCMailSendDetail detail = new TCMailSendDetail();
-        detail.setSentTo("295322187@qq.com");
-        detail.setHtml(text);
+        detail.setSentTo(person.getEmail());
+        detail.setHtml(person.getText());
 
         details.add(detail);
         mailData.setDetails(details);
@@ -64,7 +70,7 @@ public class TestController extends BaseController{
         mailService.sendMail(mailData);
 
 
-        setSuccessMessage(jsonContainer, text);
+        setSuccessMessage(jsonContainer, person);
         return jsonContainer;
     }
 }
