@@ -37,4 +37,20 @@
         </plugins>
     </build>
 
+    <!-- 私有仓库 -->
+    <repositories>
+        <repository>
+            <id>maven-group-neunzwei</id>
+            <name>maven-group-neunzwei</name>
+            <url>http://101.132.108.40:8081/repository/maven-group-neunzwei/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <!--snapshots默认是关闭的,需要开启  -->
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
 </project>
